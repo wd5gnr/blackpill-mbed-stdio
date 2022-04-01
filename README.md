@@ -34,7 +34,8 @@ Keep in mind that it isn't the USB connection you have to make, it is the termin
 Also keep in mind that almost none of this is necessary if you don't use the standard I/O functions. In other words, use
 usbSerial.printf(...) and the like and you can avoid all of this. Still...
 
-== Example
+Example
+==
 The example code blinks an LED, reads a keyboard character if available, and prints a count and the last character it saw using printf.
 
 
