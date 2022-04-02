@@ -52,26 +52,31 @@ int main()
 // then nothing will happen until you clear it.
 // So the trick is to occasionally clear errors on stdout/stdin/stderr
 
+/// You will probably never see this printf!
     printf("Here we go!\r\n");  // Get started
   
 
 
     while (true) {
         led = !led;   // flip LED if output is true
+        // see if we were not connected, but now are
         connected=usbSerial.connected();
         if (connected && ! lastconnected)
         {
+            // if so, clear the standard streams
             clearerr(stdout);
             clearerr(stderr);
             clearerr(stdin);
             
         }
-        lastconnected=connected;
+        lastconnected=connected;  // remember for next time
+        // if a character is waiting, read it
         if (usbSerial.available()>=1) 
             {
                 in=getchar();
                 if (!isspace(in)) c=in;
             }
+        // dumb output
         printf("%d - %c\r\n",++i,c);
         ThisThread::sleep_for(rate);  // sleepy time
     }
