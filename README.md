@@ -38,6 +38,14 @@ Example
 ==
 The example code blinks an LED, reads a keyboard character if available, and prints a count and the last character it saw using printf.
 
+Build environment
+==
+The Blackpill isn't directly supported by mbed. Most people tell you to use the Nucelo target for the F411 CPU, but that has a few quirks.
+
+If you use the desktop "Mbed Studio" you can follow these directions to set up for a proper build environment for Blackpill:
+
+https://os.mbed.com/users/hudakz/code/BLACKPILL_Custom_Target/graph/
+
 
 
 
